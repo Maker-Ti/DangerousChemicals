@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0d223b"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#1f3f60">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textColor="#ffffff"
+            android:text="数据统计"
+            android:textSize="16dp"
+            />
+        <TextView
+            android:id="@+id/back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/arrow_left"
+            />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_marginHorizontal="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TableRow
+                android:background="@drawable/chart_bc"
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:textSize="16dp"
+                    android:textColor="@color/text_white"
+                    android:text="故障类型统计"
+                    android:gravity="center|left"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="40dp" />
+            </TableRow>
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:background="@drawable/chart_bc"
+                android:layout_marginTop="10dp"
+                android:id="@+id/barchart"
+                android:layout_width="match_parent"
+                android:layout_height="300dp">
+            </com.github.mikephil.charting.charts.BarChart>
+
+            <TableRow
+                android:layout_marginTop="20dp"
+                android:background="@drawable/chart_bc"
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:textSize="16dp"
+                    android:textColor="@color/text_white"
+                    android:text="解决比例"
+                    android:gravity="center|left"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="40dp" />
+            </TableRow>
+            <com.github.mikephil.charting.charts.PieChart
+                android:background="@drawable/chart_bc"
+                android:id="@+id/subpiechart"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="350dp">
+            </com.github.mikephil.charting.charts.PieChart>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

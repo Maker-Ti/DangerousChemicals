@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="#0d223b"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#1f3f60">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textColor="#ffffff"
+            android:text="历史查询"
+            android:textSize="16dp"
+            />
+        <TextView
+            android:id="@+id/back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/arrow_left"
+          />
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:paddingHorizontal="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/chart_bc">
+                    <TextView
+                        android:layout_marginHorizontal="10dp"
+                        android:textColor="@color/text_white"
+                        android:textSize="16dp"
+                        android:gravity="center|left"
+
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:text="选择时间段"/>
+
+                    <TextView
+                        android:id="@+id/select_mamage"
+                        android:textColor="@color/text_white"
+                        android:textSize="16dp"
+                        android:gravity="center|right"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="查询"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/chart_bc_white"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+                    <TextView
+                        android:layout_marginHorizontal="10dp"
+                        android:textSize="15dp"
+                        android:id="@+id/text_starttime"
+                        android:gravity="center"
+                        android:textColor="#000000"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:textColor="#000000"
+                        android:gravity="center"
+                        android:text="——"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"/>
+
+                    <TextView
+                        android:textColor="#000000"
+                        android:layout_marginHorizontal="10dp"
+                        android:textSize="15dp"
+                        android:id="@+id/text_endtime"
+                        android:gravity="center"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:layout_height="match_parent" />
+                </TableRow>
+
+
+                <TableRow
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/chart_bc"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="4dp">
+                    <TextView
+                        android:layout_marginLeft="10dp"
+                        android:textSize="16dp"
+                        android:textColor="@color/text_white"
+                        android:text="温度"
+                        android:gravity="center|left"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:textSize="15dp"
+                        android:textColor="@color/text_white"
+                        android:text="总数:"
+                        android:gravity="center|right"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:textSize="15dp"
+                        android:textColor="@color/text_white"
+                        android:text="20"
+                        android:gravity="center|left"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:textSize="15dp"
+                        android:textColor="@color/unnormal"
+                        android:text="报警数:"
+                        android:gravity="center|right"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:textSize="15dp"
+                        android:textColor="@color/unnormal"
+                        android:text="10"
+                        android:gravity="center|left"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent" />
+
+                </TableRow>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp">
+                    <com.github.mikephil.charting.charts.LineChart
+                        android:id="@+id/S_H_tem"
+                        android:background="@drawable/chart_bc"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp">
+                    </com.github.mikephil.charting.charts.LineChart>
+
+                    <TextView
+                        android:textColor="@color/text_white"
+                        android:id="@+id/test1"
+                        android:textSize="20dp"
+                        android:layout_centerVertical="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:text="暂无数据"
+                        android:gravity="center"/>
+
+                </RelativeLayout>
+
+
+                <TableRow
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/chart_bc"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="4dp">
+                    <TextView
+                        android:layout_marginLeft="10dp"
+                        android:textSize="16dp"
+                        android:textColor="@color/text_white"
+                        android:text="液位"
+                        android:gravity="center|left"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:textSize="15dp"
+                        android:textColor="@color/text_white"
+                        android:text="总数:"
+                        android:gravity="center|right"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:textSize="15dp"
+                        android:textColor="@color/text_white"
+                        android:text="20"
+                        android:gravity="center|left"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:textSize="15dp"
+                        android:textColor="@color/unnormal"
+                        android:text="报警数:"
+                        android:gravity="center|right"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:textSize="15dp"
+                        android:textColor="@color/unnormal"
+                        android:text="10"
+                        android:gravity="center|left"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent" />
+
+                </TableRow>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp">
+                    <com.github.mikephil.charting.charts.LineChart
+                        android:id="@+id/S_H_li"
+                        android:background="@drawable/chart_bc"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp">
+                    </com.github.mikephil.charting.charts.LineChart>
+
+                    <TextView
+                        android:textColor="@color/text_white"
+                        android:id="@+id/test2"
+                        android:textSize="20dp"
+                        android:layout_centerVertical="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:text="暂无数据"
+                        android:gravity="center"/>
+                </RelativeLayout>
+
+
+
+                <TableRow
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/chart_bc"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="4dp">
+                    <TextView
+                        android:layout_marginLeft="10dp"
+                        android:textSize="16dp"
+                        android:textColor="@color/text_white"
+                        android:text="压力"
+                        android:gravity="center|left"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:textSize="15dp"
+                        android:textColor="@color/text_white"
+                        android:text="总数:"
+                        android:gravity="center|right"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:textSize="15dp"
+                        android:textColor="@color/text_white"
+                        android:text="20"
+                        android:gravity="center|left"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:textSize="15dp"
+                        android:textColor="@color/unnormal"
+                        android:text="报警数:"
+                        android:gravity="center|right"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:textSize="15dp"
+                        android:textColor="@color/unnormal"
+                        android:text="10"
+                        android:gravity="center|left"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent" />
+
+                </TableRow>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp">
+                    <com.github.mikephil.charting.charts.LineChart
+                        android:id="@+id/S_H_pre"
+                        android:layout_marginBottom="25dp"
+                        android:background="@drawable/chart_bc"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                    </com.github.mikephil.charting.charts.LineChart>
+                    <TextView
+                        android:textColor="@color/text_white"
+                        android:id="@+id/test3"
+                        android:textSize="20dp"
+                        android:layout_centerVertical="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:text="暂无数据"
+                        android:gravity="center"/>
+                </RelativeLayout>
+
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+    <LinearLayout
+
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/warning">
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+        <LinearLayout
+            android:id="@+id/dialog"
+            android:gravity="bottom"
+            android:orientation="vertical"
+            android:paddingHorizontal="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <RelativeLayout
+
+                android:id="@+id/control"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/head">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:text="故障上报"
+                    android:textSize="16dp"
+                    android:textColor="#403e3e"/>
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:id="@+id/arrow"
+                    android:rotation="45"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/line"/>
+            </RelativeLayout>
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@drawable/full_gray"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffffff"
+                android:id="@+id/content">
+                <ListView
+                    android:layout_marginBottom="50dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/list"></ListView>
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_alignParentBottom="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+                    <Button
+                        android:textColor="#ffffff"
+                        android:background="@drawable/warning_btn"
+                        android:text="提交"
+                        android:id="@+id/offer"
+                        android:layout_width="100dp"
+                        android:layout_height="30dp" />
+                    <Button
+                        android:textColor="#ffffff"
+                        android:background="@drawable/warning_btn"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="100dp"
+                        android:layout_height="30dp"
+                        android:text="取消显示"
+                        android:id="@+id/visible"/>
+                    <Button
+                        android:textColor="#ffffff"
+                        android:background="@drawable/warning_btn"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="100dp"
+                        android:layout_height="30dp"
+                        android:text="全选"
+                        android:id="@+id/all"/>
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
